@@ -6,10 +6,12 @@ Feature: contactUs
   Background: go to source meridian website
     Given the user has accessed to sm website
     And the index page is displayed
-    And click the contact us option in the menu
+    And click menu button
+    And click contact us
 
   Scenario: correctly form submit
-    Given the user enter correct information to form
+    Given the user has accessed to contact us page
+    And the user enter correct information to form
     And mark the checkbox to aceppt terms and conditions
     And click the submit button
     Then the form is submit correctly
