@@ -16,4 +16,6 @@ def contact_us_page_is_displayed(context):
 
 @step("the user enter correct information to form")
 def input_correct_info(context):
-    time.sleep(2)
+    context.contact_us_page = ContactUsPage(context.browser_interactions)
+    assert context.contact_us_page.fill_correct_info()
+    time.sleep(10)

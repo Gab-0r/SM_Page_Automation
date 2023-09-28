@@ -30,16 +30,15 @@ class BrowserInteractions:
             element.click()
             return True
 
-    def input_text(self, raw_locator: tuple) -> bool:
+    def input_text(self, raw_locator: tuple, text: str) -> bool:
         try:
-            element = WebDriverWait(self._driver, self.time_out).until(
-                EC.presence_of_element_located(get_locator(raw_locator))
-            )
+            element = WebDriverWait(self._driver, self.time_out).until(EC.visibility_of_element_located(
+                get_locator(raw_locator)
+            ))
         except:
             return False
         else:
-            element.click()
-            return True
+            element.send_keys(text)
 
     def element_is_visible(self, raw_locator: tuple) -> bool:
         try:

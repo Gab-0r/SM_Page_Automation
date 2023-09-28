@@ -16,6 +16,7 @@ def go_to_sm(context):
 
 @step("the index page is displayed")
 def index_page_is_displayed(context):
+    time.sleep(3)
     context.index_page = IndexPage(context.browser_interactions)
     assert context.index_page.is_index_visible(), "index is not displayed"
 
