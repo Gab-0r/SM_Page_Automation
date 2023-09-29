@@ -49,6 +49,7 @@ class BrowserInteractions:
             return False
         else:
             element.send_keys(text)
+            return True
 
     def element_is_visible(self, raw_locator: tuple) -> bool:
         try:

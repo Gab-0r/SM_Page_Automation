@@ -37,3 +37,10 @@ def form_correctly_submit(context):
     context.contact_us_page = ContactUsPage(context.browser_interactions)
     assert context.contact_us_page.is_form_submitted(), "form wwas not submitted"
     time.sleep(2)
+
+
+@step("enter string {value} in {field} field")
+def enter_wrong_value_in_field(context, value, field):
+    context.contact_us_page = ContactUsPage(context.browser_interactions)
+    assert context.contact_us_page.enter_info_in_field(value, field)
+    time.sleep(10)

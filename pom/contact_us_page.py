@@ -5,10 +5,15 @@ from pom.locators.contact_us_locators import ContactUsLocators as locators
 from dotenv import load_dotenv
 
 
-def element_to_locator(option: str) -> tuple:
-    locatorsDict = {
+def field_to_locator(option: str) -> tuple:
+    locators_dict = {
+        "name": locators.FULLNAME_FIELD,
+        "email": locators.EMAIL_FIELD,
+        "company": locators.COMPANY_FIELD,
+        "phone": locators.PHONE_FIELD,
+        "help": locators.HELP_FIELD
     }
-    return locatorsDict[option]
+    return locators_dict[option]
 
 
 class ContactUsPage:
@@ -42,6 +47,12 @@ class ContactUsPage:
 
     def is_form_submitted(self):
         return self.browser_interactions.element_is_visible(locators.SUCCESSFULLY_SUBMITTED)
+
+    def enter_info_in_field(self, value, field):
+        #TODO: Limpiar el campo antes de ingresar el valor nuevo
+        self.browser_interactions.input_text(field_to_locator(field), "")
+        return self.browser_interactions.input_text(field_to_locator(field), value)
+
 
 
 
