@@ -18,4 +18,9 @@ def contact_us_page_is_displayed(context):
 def input_correct_info(context):
     context.contact_us_page = ContactUsPage(context.browser_interactions)
     assert context.contact_us_page.fill_correct_info()
-    time.sleep(10)
+
+
+@step("mark the checkbox to aceppt terms and conditions")
+def check_terms_and_conditions(context):
+    context.contact_us_page = ContactUsPage(context.browser_interactions)
+    assert context.contact_us_page.mark_checkbox()

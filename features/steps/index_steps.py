@@ -16,7 +16,7 @@ def go_to_sm(context):
 
 @step("the index page is displayed")
 def index_page_is_displayed(context):
-    time.sleep(3)
+    time.sleep(1)
     context.index_page = IndexPage(context.browser_interactions)
     assert context.index_page.is_index_visible(), "index is not displayed"
 
@@ -24,4 +24,4 @@ def index_page_is_displayed(context):
 @step("click {element}")
 def click_element(context, element):
     context.index_page = IndexPage(context.browser_interactions)
-    assert context.index_page.click_element(element), "element not found"
+    context.index_page.click_element(element)

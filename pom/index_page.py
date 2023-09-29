@@ -22,5 +22,6 @@ class IndexPage():
         return self.browser_interactions.element_is_visible(locators.NAV_BUTTON)
 
     def click_element(self, element):
+        time.sleep(1)
         return self.browser_interactions.click_element(element_to_locator(element))
 

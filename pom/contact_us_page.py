@@ -34,5 +34,8 @@ class ContactUsPage:
 
         return True
 
+    def mark_checkbox(self):
+        return self.browser_interactions.click_checkbox(locators.TERMS_CHECKBOX)
+
 
 
