@@ -49,8 +49,7 @@ class ContactUsPage:
         return self.browser_interactions.element_is_visible(locators.SUCCESSFULLY_SUBMITTED)
 
     def enter_info_in_field(self, value, field):
-        #TODO: Limpiar el campo antes de ingresar el valor nuevo
-        self.browser_interactions.input_text(field_to_locator(field), "")
+        self.browser_interactions.clear_text(field_to_locator(field))
         return self.browser_interactions.input_text(field_to_locator(field), value)
 
 

@@ -80,3 +80,14 @@ class BrowserInteractions:
             return None
         else:
             return self._driver.find_element(*get_locator(raw_locator))
+
+    def clear_text(self, raw_locator: tuple):
+        try:
+            WebDriverWait(self._driver, self.time_out).until(
+                EC.presence_of_element_located(get_locator(raw_locator))
+            )
+        except:
+            return False
+        else:
+            return self._driver.find_element(*get_locator(raw_locator)).clear()
+            return True
