@@ -29,7 +29,7 @@ class BrowserInteractions:
         element.click()
 
 
-    def click_checkbox(self, raw_locator: tuple) -> bool:
+    def click_element_js(self, raw_locator: tuple) -> bool:
         try:
             element = WebDriverWait(self._driver, self.time_out).until(
                 EC.presence_of_element_located(get_locator(raw_locator))

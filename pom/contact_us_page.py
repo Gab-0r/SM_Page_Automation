@@ -35,7 +35,13 @@ class ContactUsPage:
         return True
 
     def mark_checkbox(self):
-        return self.browser_interactions.click_checkbox(locators.TERMS_CHECKBOX)
+        return self.browser_interactions.click_element_js(locators.TERMS_CHECKBOX)
+
+    def click_submit(self):
+        return self.browser_interactions.click_element_js(locators.SUBMIT_BUTTON)
+
+    def is_form_submitted(self):
+        return self.browser_interactions.element_is_visible(locators.SUCCESSFULLY_SUBMITTED)
 
 
 

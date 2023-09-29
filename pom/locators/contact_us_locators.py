@@ -5,5 +5,6 @@ class ContactUsLocators:
     COMPANY_FIELD = ("ID", "field_29yf4d")
     PHONE_FIELD = ("ID", "field_6lruj")
     HELP_FIELD = ("ID", "field_e6lis6")
-    #TERMS_CHECKBOX = ("XPATH", "//div[@id='frm_checkbox_7-0']/label/input")
     TERMS_CHECKBOX= ("ID", "field_1v1zn-0")
+    SUBMIT_BUTTON = ("XPATH", "//div[@class='frm_submit']/button")
+    SUCCESSFULLY_SUBMITTED = ("XPATH", "//div[@class='frm_message']")

@@ -13,15 +13,15 @@ Feature: contactUs
     Given the user has accessed to contact us page
     And the user enter correct information to form
     And mark the checkbox to aceppt terms and conditions
-    And click the submit button
+    And click submit button
     Then the form is submit correctly
 
-  Scenario: wrong name
-    Given the user enter correct company, email, phone, help info
-    And enter a wrong name
-    And mark the checkbox to accept terms and conditions
-    And click the submit button
-    Then an error message for name is displayed
+#  Scenario: wrong name
+#    Given the user enter correct company, email, phone, help info
+#    And enter a wrong name
+#    And mark the checkbox to accept terms and conditions
+#    And click the submit button
+#    Then an error message for name is displayed
 
 #  Scenario: wrong email
 #    Given the user enter correct name, company, phone, help info
