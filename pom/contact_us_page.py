@@ -28,6 +28,7 @@ def msg_expected_location(msg_expected: str) -> tuple:
         #"empty company": ("This field cannot be empty.", locators.INVALID_COMPANY_MSG),
         "empty company": ("Este campo no puede estar en blanco.", locators.INVALID_COMPANY_MSG),
         "empty checkbox": ("This field cannot be empty.", locators.INVALID_CHECKBOX_MSG),
+        #"empty checkbox": ("Este campo no puede estar en blanco.", locators.INVALID_CHECKBOX_MSG),
         "empty help": ("This field cannot be empty.", locators.INVALID_HELP_MSG)
     }
     return msg_dict[msg_expected]
