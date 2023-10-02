@@ -3,14 +3,17 @@ import time
 from utilities.browser_interactions import BrowserInteractions
 from pom.locators.index_page_locators import IndexLocators as locators
 
+
 def element_to_locator(option: str) -> tuple:
     locatorsDict ={
         'contact us': locators.CONTACT_US_OPTION,
-        'menu button': locators.NAV_BUTTON
+        'menu button': locators.NAV_BUTTON,
+        "join us": locators.JOIN_US_OPTION
     }
     return locatorsDict[option]
 
-class IndexPage():
+
+class IndexPage:
     def __init__(self, browser_interactions: BrowserInteractions):
         self.browser_interactions = browser_interactions
 
