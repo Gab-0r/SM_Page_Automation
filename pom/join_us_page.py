@@ -1,7 +1,7 @@
 import time
 
 from utilities.browser_interactions import BrowserInteractions
-from pom.locators.join_us_locators import JoinUsLocators as locators
+from pom.locators.join_us_locators_locators import JoinUsLocators as locators
 
 def open_position_at(position: str):
     op_position_dict = {

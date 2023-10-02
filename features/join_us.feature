@@ -13,6 +13,6 @@ Feature: joinUs
     Given the user has accessed to join us page
     Given the user search the QA Automation open position
     And the user has accessed to QA Automation position page
-    When the user enter correct information to form
+    When the user enter correct information to apply
     And the user attach the cv
     Then the CV was charged succesfully

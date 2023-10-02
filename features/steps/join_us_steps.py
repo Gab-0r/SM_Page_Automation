@@ -1,10 +1,6 @@
 import time
 from behave import step
 from pom.join_us_page import JoinUsPage
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
 
 
 @step("the user has accessed to join us page")
