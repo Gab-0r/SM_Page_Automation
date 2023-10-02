@@ -33,6 +33,7 @@ def msg_expected_location(msg_expected: str) -> tuple:
     }
     return msg_dict[msg_expected]
 
+
 class ContactUsPage:
     def __init__(self, browser_interactions: BrowserInteractions):
         self.browser_interactions = browser_interactions

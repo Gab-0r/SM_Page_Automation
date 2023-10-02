@@ -28,7 +28,6 @@ class BrowserInteractions:
         )
         element.click()
 
-
     def click_element_js(self, raw_locator: tuple) -> bool:
         try:
             element = WebDriverWait(self._driver, self.time_out).until(
