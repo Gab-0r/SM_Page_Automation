@@ -19,13 +19,14 @@ Feature: contactUs
   Scenario Outline: wrong value in <field> field
     Given the user enter correct information to form
     And enter string <value> in <field> field
-    And mark the checkbox to accept terms and conditions
-    And click the submit button
-    Then an error message for <field> is displayed
+    And mark the checkbox to aceppt terms and conditions
+    And click submit button
+    Then an error <msg_expected> is displayed
 
   Examples:
-    | field | value |
-    | name  | juan_ |
+    | field | value | msg_expected |
+    | name  |  None | empty field |
+
 
 
 #  Scenario: wrong email

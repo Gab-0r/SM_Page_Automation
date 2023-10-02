@@ -18,7 +18,7 @@ class IndexPage():
         self.browser_interactions.open_page(url)
 
     def is_index_visible(self):
-        time.sleep(2)
+        time.sleep(1)
         return self.browser_interactions.element_is_visible(locators.NAV_BUTTON)
 
     def click_element(self, element):

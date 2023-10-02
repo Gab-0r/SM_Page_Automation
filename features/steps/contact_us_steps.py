@@ -30,6 +30,7 @@ def check_terms_and_conditions(context):
 def contact_us_click_submit(context):
     context.contact_us_page = ContactUsPage(context.browser_interactions)
     assert context.contact_us_page.click_submit(), "button not found"
+    time.sleep(2)
 
 
 @step("the form is submit correctly")
@@ -43,4 +44,9 @@ def form_correctly_submit(context):
 def enter_wrong_value_in_field(context, value, field):
     context.contact_us_page = ContactUsPage(context.browser_interactions)
     assert context.contact_us_page.enter_info_in_field(value, field)
-    time.sleep(10)
+
+
+@step("an error {msg_expected} is displayed")
+def check_error_msg(context, msg_expected):
+    context.contact_us_page = ContactUsPage(context.browser_interactions)
+    assert context.contact_us_page.is_error_msg_correct(msg_expected), "error message is not correct"
