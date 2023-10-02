@@ -9,12 +9,12 @@ Feature: contactUs
     And click menu button
     And click contact us
 
-#  Scenario: correctly form submit
-#    Given the user has accessed to contact us page
-#    And the user enter correct information to form
-#    And mark the checkbox to aceppt terms and conditions
-#    And click submit button
-#    Then the form is submit correctly
+  Scenario: correctly form submit
+    Given the user has accessed to contact us page
+    And the user enter correct information to form
+    And mark the checkbox to aceppt terms and conditions
+    And click submit button
+    Then the form is submit correctly
 
   Scenario Outline: wrong value in <field> field
     Given the user enter correct information to form
@@ -25,36 +25,18 @@ Feature: contactUs
 
   Examples:
     | field | value | msg_expected |
-    | name  |  None | empty field |
+    | name  |  None | empty name |
+    | name  | juan??  | invalid name  |
+    | email | juan.orozco | invalid email |
+    | email | None        | empty email   |
+    | email | juan.orozco@sourcemeridian  | invalid email |
+    | phone | 301757a93 | invalid phone |
+    | phone | 301757_3 | invalid phone |
+    | phone | None      | empty phone   |
+    | company  | None | empty company  |
 
-
-
-#  Scenario: wrong email
-#    Given the user enter correct name, company, phone, help info
-#    And enter a wrong email
-#    And mark the checkbox to accept terms and conditions
-#    And click the submit button
-#    Then an error message for email is displayed
-#
-#  Scenario: wrong phone
-#    Given the user enter correct name, company, email, help info
-#    And enter a wrong phone
-#    And mark the checkbox to accept terms and conditions
-#    And click the submit button
-#    Then an error message for phone is displayed
-#
-#  Scenario: wrong company
-#    Given the user enter correct name, email, phone, help info
-#    And enter a wrong company
-#    And mark the checkbox to accept terms and conditions
-#    And click the submit button
-#    Then an error message for company is displayed
-#
-#  Scenario: empty fields
-#    Given the user enter correct information to form
-#    And leaves an emtpy field
-#    Then an error message for empty field is displayed
-#
-#  Scenario: checkbox not checked
-#    Given the user enter correct information to form
-#    Then an error message for terms and conditions is displayed
+#  Scenario: checkbox not clicked
+#    Given the user has accessed to contact us page
+#    And the user enter correct information to form
+#    And click submit button
+#    Then an error empty checkbox is displayed

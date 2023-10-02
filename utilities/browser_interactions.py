@@ -91,3 +91,13 @@ class BrowserInteractions:
         else:
             return self._driver.find_element(*get_locator(raw_locator)).clear()
             return True
+
+    def get_element_visible(self, raw_locator: tuple) -> WebElement:
+        try:
+            WebDriverWait(self._driver, self.time_out).until(
+                EC.visibility_of_element_located(get_locator(raw_locator))
+            )
+        except:
+            return None
+        else:
+            return self._driver.find_element(*get_locator(raw_locator))

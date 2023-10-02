@@ -18,15 +18,17 @@ def field_to_locator(option: str) -> tuple:
 
 def msg_expected_location(msg_expected: str) -> tuple:
     msg_dict = {
-        "invalid name": ("Please enter a valid name", locators.INVALID_NAME_MSG),
-        "invalid email": ("Please enter a valid email address", locators.INVALID_EMAIL_MSG),
-        "invalid phone": ("Please enter a valid phone number", locators.INVALID_PHONE_MSG),
-        "empty name": ("This field cannot be empty", locators.INVALID_NAME_MSG),
-        "empty email": ("This field cannot be empty", locators.INVALID_EMAIL_MSG),
-        "empty phone": ("This field cannot be empty", locators.INVALID_PHONE_MSG),
-        "empty company": ("This field cannot be empty", locators.INVALID_COMPANY_MSG),
-        "empty checkbox": ("This field cannot be empty", locators.INVALID_CHECKBOX_MSG),
-        "empty help": ("This field cannot be empty", locators.INVALID_HELP_MSG)
+        "invalid name": ("Please enter a valid name.", locators.INVALID_NAME_MSG),
+        "invalid email": ("Please enter a valid email address.", locators.INVALID_EMAIL_MSG),
+        "invalid phone": ("Please enter a valid phone number.", locators.INVALID_PHONE_MSG),
+        #"empty name": ("This field cannot be empty.", locators.INVALID_NAME_MSG),
+        "empty name": ("Este campo no puede estar en blanco.", locators.INVALID_NAME_MSG),
+        "empty email": ("This field cannot be empty.", locators.INVALID_EMAIL_MSG),
+        "empty phone": ("This field cannot be empty.", locators.INVALID_PHONE_MSG),
+        #"empty company": ("This field cannot be empty.", locators.INVALID_COMPANY_MSG),
+        "empty company": ("Este campo no puede estar en blanco.", locators.INVALID_COMPANY_MSG),
+        "empty checkbox": ("This field cannot be empty.", locators.INVALID_CHECKBOX_MSG),
+        "empty help": ("This field cannot be empty.", locators.INVALID_HELP_MSG)
     }
     return msg_dict[msg_expected]
 
@@ -69,7 +71,15 @@ class ContactUsPage:
         return self.browser_interactions.input_text(field_to_locator(field), value)
 
     def is_error_msg_correct(self, msg_expected):
-        pass
+        msg, locator = msg_expected_location(msg_expected)
+
+        if self.browser_interactions.element_is_visible(locators.FORM_ERROR_ALERT):
+            if self.browser_interactions.get_element_visible(locator).text == msg:
+                return True
+            else:
+                return False
+        else:
+            return False
 
 
 
