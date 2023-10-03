@@ -29,3 +29,10 @@ class OpenPositionPage:
             info, field = element
             self.browser_interactions.input_text(field, info)
         return True
+
+    def attach_file(self):
+        file = os.getcwd() + os.getenv("CV_FILE")
+        print(file)
+        return self.browser_interactions.attach_file(
+            file, locators.FILE_TO_ATTACH_FIELD
+        )

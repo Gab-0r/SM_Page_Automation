@@ -100,3 +100,14 @@ class BrowserInteractions:
             return None
         else:
             return self._driver.find_element(*get_locator(raw_locator))
+
+    def attach_file(self, file: str, raw_locator: tuple):
+        try:
+            element = WebDriverWait(self._driver, self.time_out).until(
+                EC.presence_of_element_located(get_locator(raw_locator))
+            )
+        except:
+            return False
+        else:
+            element.send_keys(file)
+            return True

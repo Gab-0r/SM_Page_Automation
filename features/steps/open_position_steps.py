@@ -13,4 +13,10 @@ def position_page_visible(context, position):
 def complete_apply_form(context):
     context.open_position_page = OpenPositionPage(context.browser_interactions)
     assert context.open_position_page.fill_apply_form()
+
+
+@step("the user attach the cv")
+def attach_file(context):
+    context.open_position_page = OpenPositionPage(context.browser_interactions)
+    assert context.open_position_page.attach_file()
     time.sleep(10)

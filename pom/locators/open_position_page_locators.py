@@ -6,3 +6,4 @@ class OpenPositionLocators:
     CITY_COUNTRY_FIELD = ("ID", "field_zdyoa")
     LINKEDIN_FIELD = ("ID", "field_qqeg6")
     ABOUT_YOU_FIELD = ("ID", "field_2l3hb")
+    FILE_TO_ATTACH_FIELD = ("ID", "field_lm2r4")
