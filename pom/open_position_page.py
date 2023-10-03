@@ -3,6 +3,15 @@ from pom.locators.open_position_page_locators import OpenPositionLocators as loc
 import os
 from dotenv import load_dotenv
 
+
+def get_file_name(file: str):
+    files_dict = {
+        "CV": os.getenv("CV_FILE_NAME")
+    }
+    return files_dict[file]
+
+
+
 class OpenPositionPage:
     def __init__(self, browser_interactions: BrowserInteractions):
         self.browser_interactions = browser_interactions
@@ -36,3 +45,11 @@ class OpenPositionPage:
         return self.browser_interactions.attach_file(
             file, locators.FILE_TO_ATTACH_FIELD
         )
+
+    def is_file_attached(self, file_name):
+        file = get_file_name(file_name)
+        element = self.browser_interactions.get_element_visible(locators.FILE_ATTACHED_NAME)
+        if file == element.text:
+            return True
+        else:
+            return False

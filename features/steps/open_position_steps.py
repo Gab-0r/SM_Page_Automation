@@ -19,4 +19,10 @@ def complete_apply_form(context):
 def attach_file(context):
     context.open_position_page = OpenPositionPage(context.browser_interactions)
     assert context.open_position_page.attach_file()
-    time.sleep(10)
+
+
+@step("the {file_name} was charged succesfully")
+def is_file_attached(context, file_name):
+    context.open_position_page = OpenPositionPage(context.browser_interactions)
+    assert context.open_position_page.is_file_attached(file_name)
+    time.sleep(5)
