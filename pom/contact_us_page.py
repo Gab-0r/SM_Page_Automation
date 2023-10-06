@@ -21,14 +21,11 @@ def msg_expected_location(msg_expected: str) -> tuple:
         "invalid name": ("Please enter a valid name.", locators.INVALID_NAME_MSG),
         "invalid email": ("Please enter a valid email address.", locators.INVALID_EMAIL_MSG),
         "invalid phone": ("Please enter a valid phone number.", locators.INVALID_PHONE_MSG),
-        #"empty name": ("This field cannot be empty.", locators.INVALID_NAME_MSG),
-        "empty name": ("Este campo no puede estar en blanco.", locators.INVALID_NAME_MSG),
+        "empty name": ("This field cannot be empty.", locators.INVALID_NAME_MSG),
         "empty email": ("This field cannot be empty.", locators.INVALID_EMAIL_MSG),
         "empty phone": ("This field cannot be empty.", locators.INVALID_PHONE_MSG),
-        #"empty company": ("This field cannot be empty.", locators.INVALID_COMPANY_MSG),
-        "empty company": ("Este campo no puede estar en blanco.", locators.INVALID_COMPANY_MSG),
-        #"empty checkbox": ("This field cannot be empty.", locators.INVALID_CHECKBOX_MSG),
-        "empty checkbox": ("Este campo no puede estar en blanco.", locators.INVALID_CHECKBOX_MSG),
+        "empty company": ("This field cannot be empty.", locators.INVALID_COMPANY_MSG),
+        "empty checkbox": ("This field cannot be empty.", locators.INVALID_CHECKBOX_MSG),
         "empty help": ("This field cannot be empty.", locators.INVALID_HELP_MSG)
     }
     return msg_dict[msg_expected]

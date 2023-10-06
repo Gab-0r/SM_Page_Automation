@@ -9,12 +9,12 @@ Feature: contactUs
     And click menu button
     And click contact us
 
-#  Scenario: correctly form submit
-#    Given the user has accessed to contact us page
-#    And the user enter correct information to form
-#    And mark the checkbox to aceppt terms and conditions
-#    And click submit button
-#    Then the form is submit correctly
+  Scenario: correctly form submit
+    Given the user has accessed to contact us page
+    And the user enter correct information to form
+    And mark the checkbox to aceppt terms and conditions
+    And click submit button
+    Then the form is submit correctly
 
   Scenario Outline: wrong value in <field> field
     Given the user enter correct information to form
@@ -25,15 +25,15 @@ Feature: contactUs
 
   Examples:
     | field | value | msg_expected |
-#    | name  |  None | empty name |
-#    | name  | juan??  | invalid name  |
-#    | email | juan.orozco | invalid email |
-#    | email | None        | empty email   |
-#    | email | juan.orozco@sourcemeridian  | invalid email |
-#    | phone | 301757a93 | invalid phone |
-#    | phone | 301757_3 | invalid phone |
-#    | phone | None      | empty phone   |
-#    | company  | None | empty company  |
+    | name  |  None | empty name |
+    | name  | juan??  | invalid name  |
+    | email | juan.orozco | invalid email |
+    | email | None        | empty email   |
+    | email | juan.orozco@sourcemeridian  | invalid email |
+    | phone | 301757a93 | invalid phone |
+    | phone | 301757_3 | invalid phone |
+    | phone | None      | empty phone   |
+    | company  | None | empty company  |
     | help     | None | empty help     |
 
   Scenario: checkbox not clicked
